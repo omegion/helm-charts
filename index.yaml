@@ -2,6 +2,27 @@ apiVersion: v1
 entries:
   db-backup-cronjob:
   - apiVersion: v2
+    appVersion: 0.6.0
+    created: "2021-03-31T12:54:05.365509159Z"
+    description: A chart for creating database backup and upload t o S3
+    digest: 821dde1681ffa4917a33e4a1f40eafe665b0757299a1ddf0792904967e424c83
+    home: https://charts.omegion.dev
+    keywords:
+    - database
+    - backup
+    - cron
+    - postgresql
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: db-backup-cronjob
+    sources:
+    - https://github.com/omegion/db-backup
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/db-backup-cronjob-0.6.0/db-backup-cronjob-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     appVersion: 0.5.0
     created: "2021-03-31T12:36:19.529813759Z"
     description: A chart for creating database backup and upload t o S3
@@ -142,4 +163,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-31T12:36:19.529836959Z"
+generated: "2021-03-31T12:54:05.36554566Z"
