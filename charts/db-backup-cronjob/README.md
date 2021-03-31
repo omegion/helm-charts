@@ -1,8 +1,8 @@
-# vault-unseal-cronjob
+# db-backup-cronjob
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
-A chart for unseal Vault cron job
+A chart for creating database backup and upload t o S3
 
 **Homepage:** <https://charts.omegion.dev>
 
@@ -14,17 +14,21 @@ A chart for unseal Vault cron job
 
 ## Source Code
 
-* <https://github.com/omegion/vault-unseal>
+* <https://github.com/omegion/db-backup>
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| container.args | list | `[]` |  |
+| container.command | list | `[]` |  |
 | image.name | string | `"ghcr.io/omegion/vault-unseal"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.tag | string | `"v0.1.0"` |  |
+| podAnnotations | object | `{}` |  |
 | restartPolicy | string | `"OnFailure"` |  |
 | schedule | string | `"\"*/30 * * * *\""` |  |
+| serviceAccount.name | string | `""` |  |
 | successfulJobsHistoryLimit | int | `3` |  |
 | vault.address | string | `""` |  |
 | vault.shards | list | `[]` |  |
