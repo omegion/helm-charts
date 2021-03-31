@@ -4,22 +4,20 @@ on:
   push:
     branches:
       - master
-#    paths:
-#      - 'charts/**'
+    paths:
+      - 'charts/**'
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: fregante/setup-git-user@v1
-
+        uses: actions/checkout@v1
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@master
-        with:
-          version: v1.1.1
-          charts_repo_url: https://charts.omegion.dev
         env:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
