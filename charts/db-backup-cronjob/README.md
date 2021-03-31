@@ -1,6 +1,6 @@
 # db-backup-cronjob
 
-![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
+![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.7.0](https://img.shields.io/badge/AppVersion-0.7.0-informational?style=flat-square)
 
 A chart for creating database backup and upload t o S3
 
@@ -22,9 +22,9 @@ A chart for creating database backup and upload t o S3
 |-----|------|---------|-------------|
 | container.args | list | `[]` |  |
 | container.command | list | `[]` |  |
-| image.name | string | `"ghcr.io/omegion/vault-unseal"` |  |
+| image.name | string | `"ghcr.io/omegion/db-backup"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.tag | string | `"v0.1.0"` |  |
+| image.tag | string | `"v0.9.0"` |  |
 | podAnnotations | object | `{}` |  |
 | restartPolicy | string | `"OnFailure"` |  |
 | schedule | string | `"\"*/30 * * * *\""` |  |
