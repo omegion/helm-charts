@@ -2,8 +2,8 @@ apiVersion: v2
 name: vault-unseal-cronjob
 description: A chart for unseal Vault cron job
 type: application
-version: "v0.3.0"
-appVersion: "v0.3.0"
+version: "0.4.0"
+appVersion: "0.4.0"
 
 keywords:
   - cron
