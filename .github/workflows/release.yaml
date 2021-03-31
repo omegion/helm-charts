@@ -16,12 +16,6 @@ jobs:
 
       - uses: fregante/setup-git-user@v1
 
-      - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@master
         with:
