@@ -4,7 +4,7 @@
 
 A chart for unseal Vault cron job
 
-**Homepage:** <https://github.com/omegion>
+**Homepage:** <https://charts.omegion.dev>
 
 ## Maintainers
 
@@ -14,7 +14,7 @@ A chart for unseal Vault cron job
 
 ## Source Code
 
-* <https://github.com/omegion>
+* <https://github.com/omegion/vault-unseal>
 
 ## Values
 
