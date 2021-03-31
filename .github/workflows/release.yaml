@@ -2,10 +2,8 @@ name: Release Charts
 
 on:
   push:
-    branches:
-      - master
-#    paths:
-#      - 'charts/**'
+    tags:
+      - 'v*'
 
 jobs:
   release:
@@ -16,9 +14,26 @@ jobs:
 
       - uses: fregante/setup-git-user@v1
 
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: Release ${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ${{steps.github_release.outputs.changelog}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@master
-#        with:
-#          charts_repo_url: https://charts.omegion.dev
+        with:
+          version: v1.1.1
+          charts_repo_url: https://charts.omegion.dev
         env:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
