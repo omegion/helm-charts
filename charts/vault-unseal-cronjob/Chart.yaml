@@ -4,12 +4,13 @@ description: A chart for unseal Vault cron job
 type: application
 version: "0.2.0"
 appVersion: "0.2.0"
-
-keywords:
-  - cron
-home: "https://github.com/omegion"
+home: "https://charts.omegion.dev"
 sources:
-  - "https://github.com/omegion"
+  - "https://github.com/omegion/vault-unseal"
 maintainers:
   - name: omegion
     email: oomegion@gmail.com
+keywords:
+  - vault
+  - unseal
+  - cron
