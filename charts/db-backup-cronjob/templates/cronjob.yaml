@@ -26,5 +26,11 @@ spec:
             - name: {{ .Chart.Name }}
               image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
-              command: {{ .Values.container.command }}
-              args: {{ .Values.container.args }}
+              {{- with .Values.container.command }}
+              command:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+              {{- with .Values.container.args }}
+              args:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
