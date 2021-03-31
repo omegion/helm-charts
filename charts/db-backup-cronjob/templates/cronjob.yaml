@@ -11,12 +11,12 @@ spec:
     spec:
       template:
         metadata:
-          labels:
-          app: {{ .Chart.Name }}
-          {{ with .Values.podAnnotations }}
+          {{- with .Values.podAnnotations }}
           annotations:
-        {{ toYaml . | nindent 8 }}
-        {{ end }}
+          {{- toYaml . | nindent 8 }}
+          {{- end }}
+          labels:
+            app: {{ .Chart.Name }}
         spec:
           {{- if .Values.serviceAccount.name }}
           serviceAccountName: {{ .Values.serviceAccount.name }}
