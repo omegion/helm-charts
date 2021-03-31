@@ -1,48 +1,82 @@
 apiVersion: v1
 entries:
-  vault-unseal-cron-workflow:
+  db-backup-cronjob:
   - apiVersion: v2
-    appVersion: 0.5.0
-    created: "2021-04-08T11:04:48.922982662Z"
-    description: A chart for unseal Vault cron workflow in Argo Workflows
-    digest: fb7e53e415e84b2d8a8d1c8f64f30baf56672c677f9e97e90816db93d75be7a4
+    appVersion: 0.2.0
+    created: "2021-03-31T11:49:37.934883805Z"
+    description: A chart for creating database backup and upload t o S3
+    digest: 732a25e36b6a85378e368a05d7c554d1b9c67e41beec6004b64584e5105c22b1
+    home: https://charts.omegion.dev
+    keywords:
+    - database
+    - backup
+    - cron
+    - postgresql
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: db-backup-cronjob
+    sources:
+    - https://github.com/omegion/db-backup
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/db-backup-cronjob-0.2.0/db-backup-cronjob-0.2.0.tgz
+    version: 0.2.0
+  vault-unseal-cronjob:
+  - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2021-03-31T11:35:30.21014581Z"
+    description: A chart for unseal Vault cron job
+    digest: 0e7359eb298b1a9a9cd026c072181b14912519f9ada5df88ef74bce3ba55e729
     home: https://charts.omegion.dev
     keywords:
     - vault
     - unseal
     - cron
-    - argo
-    - workflows
     maintainers:
     - email: oomegion@gmail.com
       name: omegion
-    name: vault-unseal-cron-workflow
+    name: vault-unseal-cronjob
     sources:
     - https://github.com/omegion/vault-unseal
     type: application
     urls:
-    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cron-workflow-0.5.0/vault-unseal-cron-workflow-0.5.0.tgz
-    version: 0.5.0
+    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.3.0/vault-unseal-cronjob-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
-    appVersion: 0.4.0
-    created: "2021-04-08T10:59:38.758718389Z"
-    description: A chart for unseal Vault cron workflow in Argo Workflows
-    digest: 496bf99217e6d95671fa307b59ca944d72932117f2e65514097d4065d807298d
-    home: https://charts.omegion.dev
+    appVersion: 0.2.0
+    created: "2021-03-31T09:11:37.953965684Z"
+    description: A chart for unseal Vault cron job
+    digest: ad655b5c43fdafe57527987b124e94685a819ac627bc248a768700b2b96ae726
+    home: https://github.com/omegion
     keywords:
-    - vault
-    - unseal
     - cron
-    - argo
-    - workflows
     maintainers:
     - email: oomegion@gmail.com
       name: omegion
-    name: vault-unseal-cron-workflow
+    name: vault-unseal-cronjob
     sources:
-    - https://github.com/omegion/vault-unseal
+    - https://github.com/omegion
     type: application
     urls:
-    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cron-workflow-0.4.0/vault-unseal-cron-workflow-0.4.0.tgz
-    version: 0.4.0
-generated: "2021-04-08T11:04:48.922991762Z"
+    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.2.0/vault-unseal-cronjob-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-03-31T08:45:43.906331776Z"
+    description: A chart for unseal Vault cron job
+    digest: f87dda7cc3a95c0d412aa82d42d6d123e79fcbe55e50fdd032145c4ab72922a8
+    home: https://github.com/omegion
+    keywords:
+    - cron
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: vault-unseal-cronjob
+    sources:
+    - https://github.com/omegion
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-03-31T11:49:37.934894305Z"
