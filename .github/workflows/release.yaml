@@ -12,26 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v2
 
       - uses: fregante/setup-git-user@v1
 
-      - name: Install Helm
-        uses: azure/setup-helm@v1
-        with:
-          version: 3.4.0
-
-      - name: Build chart dependencies
-        run: |
-          for dir in charts/*/
-          do
-              (cd ${dir}; helm dependency build)
-          done
-
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.2.0
+        uses: helm/chart-releaser-action@master
         with:
           charts_repo_url: https://charts.omegion.dev
         env:
