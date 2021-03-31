@@ -9,4 +9,4 @@ image:
 
 vault:
   address: ""
-  shards: [ ]
+  shards: []
