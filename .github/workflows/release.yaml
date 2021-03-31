@@ -19,6 +19,7 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@master
         with:
+          version: v1.1.1
           charts_repo_url: https://charts.omegion.dev
         env:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
