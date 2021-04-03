@@ -148,6 +148,29 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/db-backup-cronjob-0.2.0/db-backup-cronjob-0.2.0.tgz
     version: 0.2.0
+  vault-unseal-cron-workflow:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-04-03T09:16:53.851324967Z"
+    description: A chart for unseal Vault cron workflow in Argo Workflows
+    digest: f73f0fcfb9c6516edbfebd1f6645df5b703ad37b583bdb28143c298cc88c71ff
+    home: https://charts.omegion.dev
+    keywords:
+    - vault
+    - unseal
+    - cron
+    - argo
+    - workflows
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: vault-unseal-cron-workflow
+    sources:
+    - https://github.com/omegion/vault-unseal
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cron-workflow-0.1.0/vault-unseal-cron-workflow-0.1.0.tgz
+    version: 0.1.0
   vault-unseal-cronjob:
   - apiVersion: v2
     appVersion: 0.3.0
@@ -205,4 +228,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-31T14:02:36.465829598Z"
+generated: "2021-04-03T09:16:53.851347666Z"
