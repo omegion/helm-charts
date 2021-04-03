@@ -21,3 +21,27 @@ Using config from a file:
 ```shell
 helm install --generate-name omegion/vault-unseal-cronjob --values values.yaml
 ```
+
+```shell
+vault write ssh-client-signer/config/ca private_key="$(cat ~/.ssh/hetzner)" public_key="$(cat ~/.ssh/hetzner.pub)"
+
+sudo launchctl stop com.openssh.sshd
+sudo launchctl start com.openssh.sshd
+
+
+vault write ssh-client-signer/roles/my-role -<<"EOH"
+{
+  "allow_user_certificates": true,
+  "allowed_users": "*",
+  "allowed_extensions": "permit-pty,permit-port-forwarding",
+  "default_extensions": [
+    {
+      "permit-pty": ""
+    }
+  ],
+  "key_type": "ca",
+  "default_user": "root",
+  "ttl": "30m0s"
+}
+EOH
+```

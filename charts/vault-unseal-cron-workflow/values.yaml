@@ -1,0 +1,13 @@
+schedule: '"*/30 * * * *"'
+serviceAccountName: argo-workflow
+
+image:
+  name: ghcr.io/omegion/vault-unseal
+  tag: v0.3.0
+  pullPolicy: IfNotPresent
+
+vault:
+  # Vault Server address with scheme e.g. https://vault.server.example.com
+  address: ""
+  # Vault Server Unseal keys, suggested to enter at least 3
+  shards: []

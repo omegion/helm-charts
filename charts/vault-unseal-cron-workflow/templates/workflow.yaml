@@ -1,0 +1,40 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  schedule: {{ .Values.schedule }}
+  concurrencyPolicy: "Replace"
+  startingDeadlineSeconds: 0
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 1
+  workflowSpec:
+    serviceAccountName: {{ .Values.serviceAccountName }}
+    entrypoint: vault-unseal-template
+    retryStrategy:
+      retryPolicy: OnError
+      limit: 1
+    workflowMetadata:
+      labels:
+        app: {{ .Chart.Name }}
+    arguments:
+      parameters:
+        - name: address
+          value: {{ required "A address is required for Vault Server" .Values.vault.address }}
+    templates:
+      - name: vault-unseal-template
+        inputs:
+          parameters:
+            - name: address
+        container:
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - unseal
+            - --address={{`{{inputs.parameters.address}}`}}
+            {{ range .Values.vault.shards }}
+            - --shard={{ required "A Shard (unseal key) is required" . }}
+            {{ end }}
