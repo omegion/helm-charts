@@ -7,41 +7,15 @@ Automated dependency updates. Multi-platform and multi-language.
 
 This repository hosts Omegion's [Helm](https://helm.sh) charts. Chart documentation is automatically generated using [helm-docs](https://github.com/norwoodj/helm-docs)
 
-## Add Helm repository
+## Usage
 
-```shell
+[Helm](https://helm.sh) must be installed to use the charts.
+Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
+
+Once Helm is set up properly, add the repo as follows:
+
+```console
 helm repo add omegion https://charts.omegion.dev
-helm repo update
 ```
 
-## Install chart
-
-Using config from a file:
-
-```shell
-helm install --generate-name omegion/vault-unseal-cronjob --values values.yaml
-```
-
-```shell
-vault write ssh-client-signer/config/ca private_key="$(cat ~/.ssh/hetzner)" public_key="$(cat ~/.ssh/hetzner.pub)"
-
-sudo launchctl stop com.openssh.sshd
-sudo launchctl start com.openssh.sshd
-
-
-vault write ssh-client-signer/roles/my-role -<<"EOH"
-{
-  "allow_user_certificates": true,
-  "allowed_users": "*",
-  "allowed_extensions": "permit-pty,permit-port-forwarding",
-  "default_extensions": [
-    {
-      "permit-pty": ""
-    }
-  ],
-  "key_type": "ca",
-  "default_user": "root",
-  "ttl": "30m0s"
-}
-EOH
-```
+You can then run `helm search repo omegion` to see the charts.
