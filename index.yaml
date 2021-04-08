@@ -2,6 +2,28 @@ apiVersion: v1
 entries:
   vault-unseal-cron-workflow:
   - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2021-04-08T11:04:48.922982662Z"
+    description: A chart for unseal Vault cron workflow in Argo Workflows
+    digest: fb7e53e415e84b2d8a8d1c8f64f30baf56672c677f9e97e90816db93d75be7a4
+    home: https://charts.omegion.dev
+    keywords:
+    - vault
+    - unseal
+    - cron
+    - argo
+    - workflows
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: vault-unseal-cron-workflow
+    sources:
+    - https://github.com/omegion/vault-unseal
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cron-workflow-0.5.0/vault-unseal-cron-workflow-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
     appVersion: 0.4.0
     created: "2021-04-08T10:59:38.758718389Z"
     description: A chart for unseal Vault cron workflow in Argo Workflows
@@ -23,4 +45,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cron-workflow-0.4.0/vault-unseal-cron-workflow-0.4.0.tgz
     version: 0.4.0
-generated: "2021-04-08T10:59:38.75872589Z"
+generated: "2021-04-08T11:04:48.922991762Z"
