@@ -20,3 +20,8 @@ jobs:
         uses: helm/chart-releaser-action@master
         env:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+      - name: Helm Chart Docs Github Pages
+        uses: omegion/helm-charts-docs@v0.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
