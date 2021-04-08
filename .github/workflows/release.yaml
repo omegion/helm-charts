@@ -22,6 +22,6 @@ jobs:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Helm Chart Docs Github Pages
-        uses: omegion/helm-charts-docs@v0.6.0
+        uses: omegion/helm-charts-docs@v0.9.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
