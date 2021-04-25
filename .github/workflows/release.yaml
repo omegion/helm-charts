@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - uses: fregante/setup-git-user@v1
 
@@ -27,9 +29,9 @@ jobs:
         env:
           CR_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
 
-      - name: Helm Chart Docs Github Pages
-        uses: omegion/helm-charts-docs@v0.15
-        with:
-          helmRepository: omegion
-          helmRepositoryUrl: https://charts.omegion.dev
-          token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Helm Chart Docs Github Pages
+#        uses: omegion/helm-charts-docs@v0.15
+#        with:
+#          helmRepository: omegion
+#          helmRepositoryUrl: https://charts.omegion.dev
+#          token: ${{ secrets.GITHUB_TOKEN }}
