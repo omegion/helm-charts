@@ -12,5 +12,11 @@ vault:
   # Vault Server Unseal keys, suggested to enter at least 3
   shards: []
 
+container:
+  # Container command if it is needed
+  command: [ ]
+  # Container arguments for database details
+  args: [ ]
+
 podAnnotations: {}
 podLabels: {}

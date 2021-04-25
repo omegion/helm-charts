@@ -32,12 +32,23 @@ spec:
         container:
           image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.container.command }}
+          command:
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{ if .Values.container.args }}
+          {{- with .Values.container.args }}
+          args:
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{ else }}
           args:
             - unseal
             - --address={{`{{inputs.parameters.address}}`}}
             {{ range .Values.vault.shards }}
             - --shard={{ required "A Shard (unseal key) is required" . }}
-            {{ end }}
+          {{ end }}
+          {{ end }}
         metadata:
           {{- with .Values.podAnnotations }}
           annotations:
