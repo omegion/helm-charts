@@ -11,3 +11,6 @@ vault:
   address: ""
   # Vault Server Unseal keys, suggested to enter at least 3
   shards: []
+
+podAnnotations: {}
+podLabels: {}

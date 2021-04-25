@@ -38,3 +38,13 @@ spec:
             {{ range .Values.vault.shards }}
             - --shard={{ required "A Shard (unseal key) is required" . }}
             {{ end }}
+        metadata:
+          {{- with .Values.podAnnotations }}
+          annotations:
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
+          labels:
+            app: vault-unseal
+          {{- with .Values.podLabels }}
+          {{- toYaml . | nindent 12 }}
+          {{- end }}
