@@ -1,6 +1,6 @@
 # vault-unseal-cron-workflow
 
-![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.8.0](https://img.shields.io/badge/AppVersion-0.8.0-informational?style=flat-square)
+![Version: 0.10.0](https://img.shields.io/badge/Version-0.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.0](https://img.shields.io/badge/AppVersion-0.10.0-informational?style=flat-square)
 
 A chart for unseal Vault cron workflow in Argo Workflows
 
@@ -20,6 +20,8 @@ A chart for unseal Vault cron workflow in Argo Workflows
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| container.args | list | `[]` |  |
+| container.command | list | `[]` |  |
 | image.name | string | `"ghcr.io/omegion/vault-unseal"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.tag | string | `"v0.3.0"` |  |

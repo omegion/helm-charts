@@ -23,7 +23,7 @@ spec:
     arguments:
       parameters:
         - name: address
-          value: {{ required "A address is required for Vault Server" .Values.vault.address }}
+          value: {{ .Values.vault.address }}
     templates:
       - name: vault-unseal-template
         inputs:
@@ -46,7 +46,7 @@ spec:
             - unseal
             - --address={{`{{inputs.parameters.address}}`}}
             {{ range .Values.vault.shards }}
-            - --shard={{ required "A Shard (unseal key) is required" . }}
+            - --shard={{ . }}
           {{ end }}
           {{ end }}
         metadata:
