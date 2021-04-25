@@ -2,8 +2,8 @@ apiVersion: v2
 name: vault-unseal-cron-workflow
 description: A chart for unseal Vault cron workflow in Argo Workflows
 type: application
-version: "0.7.0"
-appVersion: "0.7.0"
+version: "0.8.0"
+appVersion: "0.8.0"
 home: "https://charts.omegion.dev"
 sources:
   - "https://github.com/omegion/vault-unseal"
