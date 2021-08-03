@@ -37,6 +37,9 @@ A Helm chart for Counter API
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
+| secret.annotations | object | `{}` |  |
+| secret.enabled | bool | `false` |  |
+| secret.secrets | list | `[]` |  |
 | securityContext | object | `{}` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
