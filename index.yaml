@@ -3,6 +3,26 @@ entries:
   counterapi:
   - apiVersion: v2
     appVersion: v0.9.0
+    created: "2021-08-04T16:23:52.580983615Z"
+    description: A Helm chart for Counter API
+    digest: 807398817a82391297c72e6723ba158bffcea2d08f88de1e48fe44ae47f001f8
+    home: https://charts.omegion.dev
+    keywords:
+    - api
+    - counter
+    - free
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: counterapi
+    sources:
+    - https://github.com/counterapi/counterapi
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/counterapi-0.4.0/counterapi-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: v0.9.0
     created: "2021-08-04T16:11:38.628475781Z"
     description: A Helm chart for Counter API
     digest: 3029f709e5b4b6848101ac08b6996b0cd4375d1917816a8d2e00c9a5e122420f
@@ -397,4 +417,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
     version: 0.1.0
-generated: "2021-08-04T16:11:38.628516381Z"
+generated: "2021-08-04T16:23:52.581037615Z"
