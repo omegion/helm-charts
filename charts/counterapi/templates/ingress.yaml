@@ -1,15 +1,19 @@
 {{- if .Values.ingress.enabled -}}
-  {{- $fullName := include "counterapi.fullname" . -}}
-  {{- $svcPort := .Values.service.port -}}
-apiVersion: networking.k8s.io/v1
+{{- $fullName := include "counterapi.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1beta1
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-  {{- include "counterapi.labels" . | nindent 4 }}
+    {{- include "counterapi.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
-  {{- toYaml . | nindent 4 }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
   {{- if .Values.ingress.tls }}
@@ -18,9 +22,9 @@ spec:
     - hosts:
         {{- range .hosts }}
         - {{ . | quote }}
-      {{- end }}
+        {{- end }}
       secretName: {{ .secretName }}
-  {{- end }}
+    {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
@@ -29,12 +33,9 @@ spec:
         paths:
           {{- range .paths }}
           - path: {{ . }}
-            pathType: Prefix
             backend:
-              service:
-                name: {{ $fullName }}
-                port:
-                  number: {{ $svcPort }}
-  {{- end }}
-  {{- end }}
+              serviceName: {{ $fullName }}
+              servicePort: {{ $svcPort }}
+          {{- end }}
+    {{- end }}
   {{- end }}
