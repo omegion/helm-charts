@@ -1,6 +1,6 @@
 # counterapi
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.9.0](https://img.shields.io/badge/AppVersion-v0.9.0-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.9.0](https://img.shields.io/badge/AppVersion-v0.9.0-informational?style=flat-square)
 
 A Helm chart for Counter API
 
@@ -21,6 +21,7 @@ A Helm chart for Counter API
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| deployment.enabled | bool | `false` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ghcr.io/counterapi/counterapi"` |  |
@@ -37,6 +38,8 @@ A Helm chart for Counter API
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
+| rollout.enabled | bool | `true` |  |
+| rollout.envFrom | list | `[]` |  |
 | secret.annotations | object | `{}` |  |
 | secret.enabled | bool | `false` |  |
 | secret.secrets | list | `[]` |  |

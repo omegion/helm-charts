@@ -1,12 +1,13 @@
-{{- if .Values.deployment.enabled -}}
-apiVersion: apps/v1
-kind: Deployment
+{{- if .Values.rollout.enabled -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: {{ include "counterapi.fullname" . }}
   labels:
   {{- include "counterapi.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
   {{- include "counterapi.selectorLabels" . | nindent 6 }}
@@ -36,7 +37,10 @@ spec:
               containerPort: 80
               protocol: TCP
           resources:
-      {{- toYaml .Values.resources | nindent 12 }}
+          {{- toYaml .Values.resources | nindent 12 }}
+          {{- with .Values.rollout.envFrom }}
+          envFrom: {{- toYaml . | nindent 12 }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
       {{- toYaml . | nindent 8 }}
@@ -47,6 +51,6 @@ spec:
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
-      {{- toYaml . | nindent 8 }}
+  {{- toYaml . | nindent 8 }}
   {{- end }}
   {{- end }}
