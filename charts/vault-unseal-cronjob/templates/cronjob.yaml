@@ -1,9 +1,9 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ include "vault-unseal-cronjob.fullname" . }}
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    {{- include "vault-unseal-cronjob.labels" . | nindent 4 }}
 spec:
   schedule: {{ .Values.schedule }}
   successfulJobsHistoryLimit: {{ .Values.successfulJobsHistoryLimit }}
@@ -12,7 +12,7 @@ spec:
       template:
         metadata:
           labels:
-            app: {{ .Chart.Name }}
+            {{- include "vault-unseal-cronjob.selectorLabels" . | nindent 12 }}
         spec:
           restartPolicy: {{ .Values.restartPolicy }}
           containers:
