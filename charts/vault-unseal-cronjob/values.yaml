@@ -12,7 +12,23 @@ image:
 
 vault:
   # Vault Server address with scheme e.g. https://vault.server.example.com
-  address: "https://vault.server.example.com"
+  address: ""
   # Vault Server Unseal keys, suggested to enter at least 3
-  shards: [1,2,3]
+  shards: []
   customHeaders: {}
+
+envFrom: []
+#  - configMapRef:
+#     name: config-map-name
+#  - secretRef:
+#     name: secret-name
+
+volumeMounts: []
+#  - name: config-volume
+#    readOnly: true
+#    mountPath: "/etc/config-volume"
+
+volumes: []
+#  - name: config-volume
+#    secret:
+#      secretName: vault-unseal-config

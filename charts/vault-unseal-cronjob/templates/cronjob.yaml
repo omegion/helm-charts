@@ -28,3 +28,15 @@ spec:
                 {{- range $k, $v := .Values.vault.customHeaders }}
                 - --custom-header={{ $k }}={{ $v }}
                 {{- end }}
+              {{- with .Values.envFrom }}
+              envFrom:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+              {{- with .Values.volumeMounts }}
+              volumeMounts:
+                {{- toYaml . | nindent 16 }}
+              {{- end }}
+          {{- with .Values.volumes }}
+          volumes:
+            {{- toYaml . | nindent 12}}
+          {{- end }}
