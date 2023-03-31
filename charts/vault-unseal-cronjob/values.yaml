@@ -9,7 +9,7 @@ image:
 
 vault:
   # Vault Server address with scheme e.g. https://vault.server.example.com
-  address: ""
+  address: "https://vault.server.example.com"
   # Vault Server Unseal keys, suggested to enter at least 3
-  shards: []
+  shards: [1,2,3]
   customHeaders: {}
