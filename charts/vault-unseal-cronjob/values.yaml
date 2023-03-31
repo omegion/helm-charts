@@ -2,9 +2,12 @@ schedule: '"*/30 * * * *"'
 restartPolicy: OnFailure
 successfulJobsHistoryLimit: 3
 
+nameOverride: ""
+fullnameOverride: ""
+
 image:
   name: ghcr.io/omegion/vault-unseal
-  tag: v0.1.0
+  tag: latest
   pullPolicy: IfNotPresent
 
 vault:
@@ -12,6 +15,4 @@ vault:
   address: ""
   # Vault Server Unseal keys, suggested to enter at least 3
   shards: []
-
-nameOverride: ""
-fullnameOverride: ""
+  customHeaders: {}

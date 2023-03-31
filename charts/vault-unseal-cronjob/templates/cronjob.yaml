@@ -22,6 +22,9 @@ spec:
               args:
                 - unseal
                 - --address={{ required "A address is required for Vault Server" .Values.vault.address }}
-                {{ range .Values.vault.shards }}
+                {{- range .Values.vault.shards }}
                 - --shard={{ required "A Shard (unseal key) is required" . }}
-                {{ end }}
+                {{- end }}
+                {{- range $k, $v := .Values.vault.customHeaders }}
+                - --custom-header={{ $k }}={{ $v }}
+                {{- end }}
