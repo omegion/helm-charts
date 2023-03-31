@@ -2,6 +2,9 @@ schedule: '"*/30 * * * *"'
 restartPolicy: OnFailure
 successfulJobsHistoryLimit: 3
 
+nameOverride: ""
+fullnameOverride: ""
+
 image:
   name: ghcr.io/omegion/vault-unseal
   tag: latest
