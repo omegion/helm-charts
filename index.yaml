@@ -343,6 +343,26 @@ entries:
   vault-unseal-cronjob:
   - apiVersion: v2
     appVersion: 0.8.0
+    created: "2023-04-01T09:01:40.937916624Z"
+    description: A chart for unseal Vault cron job
+    digest: 08740a541c08cd9b185e38fafe08ef63738025345fce072af3bab33f5badeb6e
+    home: https://charts.omegion.dev
+    keywords:
+    - vault
+    - unseal
+    - cron
+    maintainers:
+    - email: oomegion@gmail.com
+      name: omegion
+    name: vault-unseal-cronjob
+    sources:
+    - https://github.com/omegion/vault-unseal
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.8.0/vault-unseal-cronjob-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 0.8.0
     created: "2023-03-31T14:26:34.004484941Z"
     description: A chart for unseal Vault cron job
     digest: 379d2420aede71eaf47b76c32e67c31acad8cdfc3fcf2597e8536be821a02f4e
@@ -477,4 +497,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-31T14:26:34.004545941Z"
+generated: "2023-04-01T09:01:40.938011327Z"
