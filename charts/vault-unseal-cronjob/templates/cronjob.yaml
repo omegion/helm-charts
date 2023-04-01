@@ -28,6 +28,9 @@ spec:
                 {{- range $k, $v := .Values.vault.customHeaders }}
                 - --custom-header={{ $k }}={{ $v }}
                 {{- end }}
+                {{- with .Values.vault.extraArgs }}
+                  {{- toYaml . | nindent 16 }}
+                {{- end }}
               {{- with .Values.envFrom }}
               envFrom:
                 {{- toYaml . | nindent 16 }}
