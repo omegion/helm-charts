@@ -262,6 +262,17 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/memos-0.1.0/memos-0.1.0.tgz
     version: 0.1.0
+  memos-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-07-08T14:46:22.457377896Z"
+    description: A Helm chart for Kubernetes
+    digest: d6937ed925ddb0d16d68814070c353ed5aea384242e1dcf29db910b06fff0960
+    name: memos-app
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/memos-app-0.1.0/memos-app-0.1.0.tgz
+    version: 0.1.0
   vault-unseal-cron-workflow:
   - apiVersion: v2
     appVersion: 0.10.0
@@ -548,4 +559,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-08T14:34:50.314684153Z"
+generated: "2023-07-08T14:46:22.457432697Z"
