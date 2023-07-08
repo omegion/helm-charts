@@ -251,6 +251,17 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/db-backup-cronjob-0.2.0/db-backup-cronjob-0.2.0.tgz
     version: 0.2.0
+  memos:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-07-08T14:34:50.314642553Z"
+    description: A Helm chart for Kubernetes
+    digest: 77dea73a1f80230a458c8aee3929cc0c8ecee27e201ebe84353753f66deca8e2
+    name: memos
+    type: application
+    urls:
+    - https://github.com/omegion/helm-charts/releases/download/memos-0.1.0/memos-0.1.0.tgz
+    version: 0.1.0
   vault-unseal-cron-workflow:
   - apiVersion: v2
     appVersion: 0.10.0
@@ -537,4 +548,4 @@ entries:
     urls:
     - https://github.com/omegion/helm-charts/releases/download/vault-unseal-cronjob-0.1.0/vault-unseal-cronjob-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-01T09:43:58.469485535Z"
+generated: "2023-07-08T14:34:50.314684153Z"
