@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: fregante/setup-git-user@v1
+      - uses: fregante/setup-git-user@v2
 
       - name: Install Helm
         uses: azure/setup-helm@v3
